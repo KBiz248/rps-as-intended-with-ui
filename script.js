@@ -9,9 +9,15 @@ function getComputerChoice() {
 
 console.log(getComputerChoice(choices))
 //console.log(computerSelection)
+let playerSelection;
+const choiceMessage = document.getElementById('choiceMessage');
+
+
 
 function playRound() {
-    playerSelection = (prompt("Rock, paper, or scissors?")).toLowerCase();
+    
+    
+    //let playerSelection //= (prompt("Rock, paper, or scissors?")).toLowerCase();
     computerSelection = getComputerChoice();
 
     const winRoundMessage = `You win! ${playerSelection} beats ${computerSelection}`;
@@ -19,22 +25,39 @@ function playRound() {
     const loseRoundMessage = `You lose! ${computerSelection} beats ${playerSelection}`;
     //these had to be in the function, or else they either wouldn't have acces to the selections, or the if statement wouldn't
     //have access to the messages
+    const win = document.getElementById('win');
+    const tie = document.getElementById('tie');
+    const lose = document.getElementById('lose')
 
     if ((playerSelection == "rock" && computerSelection == "rock")
     || (playerSelection == "paper" && computerSelection == "paper")
     || (playerSelection == "scissors" && computerSelection == "scissors")){
-        tieCount++; alert(tieRoundMessage)
+        tieCount++; //alert(tieRoundMessage)
+        choiceMessage.textContent = `${tieRoundMessage}`;
+        tie.textContent = `Tie count: ${tieCount}`;
+        return tieCount;
     } else if ((playerSelection == "rock" && computerSelection == "scissors")
     || (playerSelection == "paper" && computerSelection == "rock")
     || (playerSelection == "scissors" && computerSelection == "paper")){
-        winCount++; alert(winRoundMessage)
+        winCount++; //alert(winRoundMessage)
+        choiceMessage.textContent = `${winRoundMessage}`;
+        win.textContent = `Win count: ${winCount}`
+        return winCount;
     } else if ((playerSelection == "rock" && computerSelection =="paper")
     || (playerSelection == "paper" && computerSelection == "scissors")
     || (playerSelection == "scissors" && computerSelection == "rock")){
-        loseCount++; alert(loseRoundMessage)
-    }
-}
+        loseCount++; //alert(loseRoundMessage)
+        choiceMessage.textContent = `${loseRoundMessage}`;
+        lose.textContent = `Lose count: ${loseCount}`;
+        return loseCount;
+    } console.log(playerSelection);
 
+    
+    
+
+    
+}
+/*
 function game() { for(i=0; i<5; i++) {playRound()}
 
     const tieSingularOrPlural = tieCount == 1? "tie" : "ties";
@@ -52,3 +75,16 @@ console.log(winCount)
 console.log(tieCount)
 console.log(loseCount)
 console.log(game())
+*/
+const button = document.querySelectorAll('button')
+
+console.log(button)
+//const rock = document.querySelector('button#rock')
+//rock.addEventListener('click', () => console.log('hello'))
+//button.forEach(addEventListener('click', () => playRound()));
+//console.log(playerSelection)
+
+
+
+const lose = document.querySelector('.lose')
+//lose.textContent ( `Loss count ${loseCount}`)

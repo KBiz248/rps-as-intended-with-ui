@@ -3,22 +3,23 @@
     <header>
         <meta charset="UTF-8">
         <title>Rock Paper Scissors</title>
+        <link rel="stylesheet" href="./style.css">
     </header>
     <body>
-        <script src="./script.js"></script>
+        <script src="./script.js" defer></script>
         <div class="flex column">
-            <div></div>
-            <div class="flex">
-                <button></button>
-                <button></button>
-                <button></button>
+            <div class="center">Choose your weapon!</div>
+            <div id="buttons" class="flex">
+                <button onclick="playerSelection='rock'; playRound()" id="rock" >ROCK</button>
+                <button onclick="playerSelection='paper'; playRound()" id="paper">PAPER</button>
+                <button onclick="playerSelection='scissors'; playRound()" id="scissors">SCISSORS</button>
             </div>
             <div id="choiceMessage"></div>
             <div></div>
-            <div id="winCount" class="flex">
-                <div></div>
-                <div></div>
-                <div></div>
+            <div id="counter" class="flex">
+                <div id="win"></div>
+                <div id="tie"></div>
+                <div id="lose"></div>
             </div>
         </div>
     </body>
