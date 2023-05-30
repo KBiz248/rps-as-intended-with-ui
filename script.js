@@ -1,3 +1,5 @@
+//comments are for the benefit of Odin Project students
+
 let winCount = 0;
 let tieCount = 0;
 let loseCount = 0;
@@ -7,7 +9,9 @@ These were declared as 0 so that they could be incrimented in the playRound func
 They needed to be declared outside of the function.
 If they were declared inside the function, then their value would be reset to 0 each time the function was called,
 therefore making it impossible to incriment them as intended.
-Their position (whether above or below the function) does not matter.
+
+Their position (whether above or below the function) does not matter,
+as long as they are outside of the function.
 */
 
 const choices = ["rock", "paper", "scissors"]
